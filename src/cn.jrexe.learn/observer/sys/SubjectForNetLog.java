@@ -2,9 +2,10 @@ package cn.jrexe.learn.observer.sys;
 
 import java.util.Observable;
 
-public class SubjectForRunTimeLog extends Observable {
+public class SubjectForNetLog extends Observable {
+   private String msg;
 
-    private String msg;
+   final String ID = "@3123123123";
 
     public String getMsg() {
         return msg;
@@ -12,13 +13,13 @@ public class SubjectForRunTimeLog extends Observable {
 
     public void setMsg(String msg) {
         this.msg = msg;
-        setChanged();//
-        notifyObservers("arg");
+        setChanged();
+        notifyObservers(ID);
     }
 
     @Override
     public String toString() {
-        return "SubjectForRunTimeLog{" +
+        return "SubjectForNetLog{" +
                 "msg='" + msg + '\'' +
                 '}';
     }
